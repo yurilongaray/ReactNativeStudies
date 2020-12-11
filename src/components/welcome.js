@@ -1,38 +1,27 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 import styles from '../styles/welcome';
 
-export default class Welcome extends Component {
+export default function Welcome() {
 
-    /* State is private and can be only acessed for this component */
-    state = {
-        slogan: 'This will be replaced (empty string)'
-    }
+    const route = useRoute();
+    const [slogan, setSlogan] = useState('Slogan Value');
 
-    alternate = () => {
-
-        this.setState({
-            slogan: this.state.slogan ? '' : 'Did u see?'
-        });
-    }
-
-    render() {
-
-        return (
-            <View style={styles.container}>
-                <Text
-                    style={styles.text}>
-                    {this.props.title}
-                </Text>
-                <TouchableOpacity style={styles.button} onPress={this.alternate}>
-                    <Text>Change slogan state</Text>
-                </TouchableOpacity>
-                <Text
-                    style={styles.description}>
-                    {this.props.description}
-                </Text>
-                <Text style={{ marginTop: 10 }}>{this.state.slogan}</Text>
-            </View>
-        )
-    }
+    return (
+        <View style={styles.container}>
+            <Text
+                style={styles.text}>
+                {route.params.title}
+            </Text>
+            <TouchableOpacity style={styles.button} onPress={() => setSlogan('Changed!')}>
+                <Text>Change slogan state</Text>
+            </TouchableOpacity>
+            <Text
+                style={styles.description}>
+                {route.params.description}
+            </Text>
+            <Text style={{ marginTop: 10 }}>{slogan}</Text>
+        </View>
+    )
 }

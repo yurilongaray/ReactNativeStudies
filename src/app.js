@@ -9,7 +9,7 @@ const Stack = createStackNavigator();
 function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator>
+			<Stack.Navigator initialRouteName='Login'>
 				<Stack.Screen name='Login' component={Login} />
 				<Stack.Screen name='Welcome' component={Welcome} options={{ title: 'Welcome' }} />
 			</Stack.Navigator>
