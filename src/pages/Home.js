@@ -4,10 +4,12 @@ import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 import New from '../components/New';
+import { useState } from 'react';
 
 export default function Home() {
 
     const navigation = useNavigation();
+    const [searchValue, setSearchValue] = useState('Empty');
 
     return (
         <ScrollView
@@ -19,6 +21,7 @@ export default function Home() {
                     <TextInput
                         placeholder="Looking for..."
                         style={styles.input}
+                        onChangeText={(value) => setSearchValue(value)}
                     />
                 </View>
             </View>
@@ -30,7 +33,7 @@ export default function Home() {
                     cover={require('../assets/house1.jpg')}
                     name="Casa de Praia"
                     description="Casa nova uma quadra do mar, lugar seguro e monitorado 24horas."
-                    onPress={() => navigation.navigate('detail')}
+                    onPress={() => navigation.navigate('Detail')}
                 />
 
                 <New
@@ -47,6 +50,7 @@ export default function Home() {
                     onPress={() => { }}
                 />
             </ScrollView>
+            <Text style={styles.inputValue}>{searchValue}</Text>
         </ScrollView>
     );
 }
@@ -87,5 +91,8 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat_700Bold',
         fontSize: 18,
         color: '#4f4a4a'
+    },
+    inputValue: {
+        alignSelf: 'center'
     }
 });

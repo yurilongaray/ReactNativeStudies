@@ -23,7 +23,7 @@ function Routes() {
 					name='Welcome'
 					component={Welcome}
 					options={{ title: 'Welcome' }}
-				/>{ 
+				/>
 				<Stack.Screen
 					name="Home"
 					component={Home}
@@ -41,9 +41,8 @@ function Routes() {
 						)
 					}}
 				/>
-				/*
 				<Stack.Screen
-					name="detail"
+					name="Detail"
 					component={Detail}
 					options={{
 						title: 'Detalhe',
@@ -61,7 +60,7 @@ function Routes() {
 							</TouchableOpacity>
 						)
 					}}
-				/> */}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
