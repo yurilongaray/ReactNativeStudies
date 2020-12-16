@@ -28,6 +28,9 @@ export default function Welcome() {
             <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate('Home')}>
                 <Text>Let's go!</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.homeButton} onPress={() => navigation.navigate('TicTacToe')}>
+                <Text>Wanna Play some TicTacToe?</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -57,6 +60,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'white',
         width: 300,
+        borderRadius: 100
+    },
+    ticTacToeButton: {
+        justifyContent: 'center',
+        height: 35,
+        marginTop: 20,
+        alignItems: 'center',
+        backgroundColor: 'white',
+        width: 200,
         borderRadius: 100
     }
 });

@@ -8,6 +8,7 @@ import Home from './pages/Home.js';
 import Detail from './pages/Detail';
 import Login from './pages/Login';
 import Welcome from './pages/Welcome';
+import TicTacToe from './pages/TicTacToe';
 
 const Stack = createStackNavigator();
 
@@ -59,6 +60,16 @@ function Routes() {
 								/>
 							</TouchableOpacity>
 						)
+					}}
+				/>
+				<Stack.Screen
+					name="TicTacToe"
+					component={TicTacToe}
+					options={{
+						title: 'TicTacToe',
+						headerTitleStyle: {
+							fontFamily: 'Montserrat_700Bold'
+						}
 					}}
 				/>
 			</Stack.Navigator>
