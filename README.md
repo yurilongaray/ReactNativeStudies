@@ -3,6 +3,12 @@
 * https://react-native.rocketseat.dev/android/linux/#kvm-extra
 * https://react-native.rocketseat.dev/android/emulador
 
+### Pré installation
+- 1° check the node version;
+- 2° if you are using linux, give permission to the folder (```sudo chmod -R 777```)
+- 3° check if the port is available by running ```sudo lsof -i :8081``` and if there is a process running, get its PID and kill with ```kill -9 <PID>```. This is shown in the link: https://reactnative.dev/docs/troubleshooting#content
+- 4° make sure your android studio is running.
+
 ### To start the project:
 - 1° start the studio by running "studio.sh" into your bash;
 - 2° start the project by running "npm start";
